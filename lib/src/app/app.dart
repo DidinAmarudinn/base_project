@@ -1,23 +1,9 @@
+import 'package:movie_app/src/ui/screen/splash_screen.dart';
 import 'package:stacked/stacked_annotations.dart';
-import 'package:stacked_services/stacked_services.dart';
-
-import '../services/movie_service.dart';
-import '../ui/views/main/main_view.dart';
-import '../ui/views/movie/movie_list_view.dart';
-import '../ui/views/splash_screen/splash_screen_view.dart';
 
 @StackedApp(
   routes: [
-    MaterialRoute(page: SplashScreenView, initial: true),
-    CupertinoRoute(page: MainView),
-    CupertinoRoute(page: MovieListView),
-  ],
-  dependencies: [
-    LazySingleton(classType: NavigationService),
-    LazySingleton(classType: DialogService),
-    LazySingleton(classType: BottomSheetService),
-    LazySingleton(classType: SnackbarService),
-    LazySingleton(classType: MovieService),
+    MaterialRoute(page: SplashScreen, initial: true),
   ],
 )
 class AppSetup {
