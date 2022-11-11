@@ -16,7 +16,6 @@ class PostServiceImplement extends PostService {
   @override
   Future<PostModel?> getPost() async {
     final response = await client.retryClient().get(Uri.parse(getPostUrl));
-    print(response.statusCode);
     if (response.statusCode == 200) {
       final result = PostModel.fromJson(json.decode(response.body));
       return result;
